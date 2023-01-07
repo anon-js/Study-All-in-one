@@ -9,7 +9,7 @@ import styles from './styles';
 
 const App = () => {
   return (
-      <SafeAreaView style={[ styles.basicView, { backgroundColor: "#ffffffff" } ]}>
+      <SafeAreaView style={ styles.basicView }>
         <ScrollView style={ styles.basicView }>
           <Main name="민호" msg="오늘 하루도 화이팅!" />
           <CalenderSection />
