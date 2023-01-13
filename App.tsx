@@ -1,26 +1,46 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import Main from './sections/Main'
 import CalenderSection from './sections/CalenderSection';
 import TodoSection from './sections/TodoSection';
 import MemoSection from './sections/MemoSection';
 import StudyPlannerSection from './sections/StudyPlannerSection';
-import styles from './styles';
 import { RecoilRoot } from 'recoil';
+import styled from 'styled-components/native';
+import BottomSheet from './components/BottomSheet';
+import { BottomSheetText } from './styles';
+
+const FullScreenArea = styled.View`
+    flex: 1;
+    background: #f5f5f7;
+`
+
+const SafeArea = styled.SafeAreaView`
+    background: #f5f5f7;
+`
+
+const SectionScroll = styled.ScrollView`
+    background: #f5f5f7;
+`
 
 const App = () => {
     return (
         <RecoilRoot>
-            <StatusBar barStyle='dark-content'></StatusBar>
-            <SafeAreaView style={[ styles.basicView, { backgroundColor: "#f5f5f7" } ]}>
-                <ScrollView style={[ styles.basicView ]}>
-                    <Main name="민호" msg="오늘 하루도 화이팅!" />
-                    <CalenderSection />
-                    <TodoSection />
-                    <MemoSection />
-                    <StudyPlannerSection />
-                </ScrollView>
-            </SafeAreaView>
+            <FullScreenArea>
+                <StatusBar barStyle='dark-content' backgroundColor='#f5f5f7'/>
+                <SafeArea>
+                    <SectionScroll>
+                        <Main name='민호' msg='반가워요! 👋'/>
+                        <CalenderSection />
+                        <TodoSection />
+                        <MemoSection />
+                        <StudyPlannerSection />
+                    </SectionScroll>
+                </SafeArea>
+                <BottomSheet>
+                    <BottomSheetText>안녕하세요</BottomSheetText>
+                </BottomSheet>
+            </FullScreenArea>
         </RecoilRoot>
     )
 }

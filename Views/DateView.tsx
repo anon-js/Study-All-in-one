@@ -28,18 +28,22 @@ const PointText = styled.Text`
     text-align: center;
     font-size: 14px;
     color: #0047ba;
+    font-family: 'Pretendard-Regular';
 `
 
 const DayText = styled.Text`
+    color: #000;
     text-align: center;
     font-size: 20px;
-    font-weight: 500;
+    font-family: 'Pretendard-Medium';
     margin: 5px 0 10px 0;
 `
 
 const ScheduleText = styled.Text`
+    color: #000;
     text-align: center;
     font-size: 17px;
+    font-family: 'Pretendard-Regular';
 `
 
 export const DateView: React.FC<dateProps> = ({ point, day, date, schedule }) => {

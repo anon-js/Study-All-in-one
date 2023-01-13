@@ -25,8 +25,8 @@ export const TodoItem: React.FC<todoProps> = ({ title, n }) => {
 
     const TodoText = styled.Text<{ value: boolean }>`
         color: ${(props) => (props.value ? '#0047ba' : '#000')};
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 17px;
+        font-family: 'Pretendard-SemiBold';
         margin-bottom: 10px;
     `
 

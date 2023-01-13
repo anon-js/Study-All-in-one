@@ -12,8 +12,9 @@ const TitleView = styled.View`
 `
 
 const TitleText = styled.Text`
-    font-size: 24px;
-    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Pretendard-Bold';
 `
 
 

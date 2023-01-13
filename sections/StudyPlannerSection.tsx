@@ -1,43 +1,46 @@
 import React from "react";
-import { View, Text } from "react-native";
-import Button from '../components/Button';
-import styles from '../styles';
+import styled from "styled-components/native";
+import { SectionView } from '../styles';
+import { TitleBar } from "../Views/TitleBar";
+
+const StudyPlanner = styled.View`
+    flex: 1;
+    height: 70px;
+`
+
+const SpanText = styled.Text`
+    flex: 1;
+    font-size: 17px;
+    line-height: 20px;
+    color: #000;
+    font-family: 'Pretendard-Regular';
+`
+
+const PointText = styled.Text`
+    font-family: 'Pretendard-Bold';
+    color: #0047ba;
+`
+
+const DetailText = styled.Text`
+    font-size: 12px;
+    color: #777;
+    font-family: 'Pretendard-Regular';
+`
 
 const StudyPlannerSection = () => {
     return (
-        <View style={[ styles.section, styles.spView ]}>
-            <View style={ styles.topTextView }>
-                <View style={ styles.titleView }>
-                    <Text style={ styles.titleText }>
-                        공부 계획표
-                    </Text>
-                </View>
-                <View style={ styles.btnView }>
-                    <Button
-                        btnWidth={75}
-                        btnHeight={30}
-                        onPress={null}
-                        title="공부하기"
-                        btnColor="#fff"
-                        textColor="#297bff"
-                        btnStyle={{}}
-                    />
-                </View>
-            </View>
-            <View style={ styles.studyPlanner }>
-                <Text style={{ flex: 1, fontSize: 17, lineHeight: 20, }}>
-                    남은 기간:
-                    <Text style={{ fontWeight: 'bold', color: "#0047ba", }}> D-2</Text>
+        <SectionView>
+            <TitleBar title="공부 계획표" btnTitle="공부하기" onPress={null}/>
+            <StudyPlanner>
+                <SpanText>
+                    남은 기간: <PointText>D-2</PointText>
                     {"\n"}
-                    오늘 공부한 시간:
-                    <Text style={{ fontWeight: 'bold', color: "#0047ba", }}> 12시간 10분</Text>
+                    오늘 공부한 시간: <PointText>12시간 10분</PointText>
                     {"\n"}
-                    <Text style={{ fontSize: 12, color: '#777', }}>
-                        어제보다 2시간 더 공부했어요!
-                    </Text>
-                </Text>
-            </View>
-        </View>
+                    <DetailText>어제보다 2시간 더 공부했어요!</DetailText>
+                </SpanText>
+            </StudyPlanner>
+        </SectionView>
     );
 }
 

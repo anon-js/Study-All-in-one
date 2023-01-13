@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, } from 'react-native';
+import styled from 'styled-components/native';
 
 type ButtonProps = {
   btnWidth: number,
@@ -8,35 +8,31 @@ type ButtonProps = {
   btnColor: string,
   textColor: string,
   onPress: any,
-  btnStyle: any,
 }
 
-const Button: React.FC<ButtonProps> = ({ btnWidth, btnHeight, title, btnColor, textColor, onPress, btnStyle }) => {
+const Button: React.FC<ButtonProps> = ({ btnWidth, btnHeight, title, btnColor, textColor, onPress }) => {
+
+  const ButtonView = styled.TouchableOpacity<{ bgColor: string, width: number, height: number }>`
+    background: ${(p) => (p.bgColor)};
+    width: ${(p) => (p.width + "px")};
+    height: ${(p) => (p.height + "px")};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+  `
+
+  const ButtonText = styled.Text<{ color: string }>`
+    font-size: 15px;
+    font-family: 'Pretendard-Medium';
+    color: ${p => p.color};
+  `
+
   return (
-    <TouchableOpacity style={[
-      styles.button,
-      { backgroundColor: btnColor, width: btnWidth, height: btnHeight, },
-      btnStyle
-    ]}
-    onPress={onPress}>
-      <Text style={[
-        styles.title,
-        {color: textColor}
-      ]}>{title}</Text>
-    </TouchableOpacity>
+    <ButtonView bgColor={btnColor} width={btnWidth} height={btnHeight} onPress={onPress}>
+      <ButtonText color={textColor}>{title}</ButtonText>
+    </ButtonView>
   )
 }
-
-const styles = StyleSheet.create({
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 50,
-  },
-  title: {
-    fontSize: 17,
-    fontWeight: '600',
-  },
-});
 
 export default Button;

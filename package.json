@@ -10,11 +10,16 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@emotion/native": "^11.10.0",
+    "@emotion/react": "^11.10.5",
+    "@legendapp/motion": "^2.2.0",
+    "framer-motion": "^8.4.0",
     "gradlew": "^0.0.1-security",
-    "react": "18.1.0",
+    "react": "^18.2.0",
     "react-native": "0.70.6",
     "react-native-gradle-plugin": "^0.71.12",
-    "recoil": "^0.7.6"
+    "recoil": "^0.7.6",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

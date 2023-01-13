@@ -1,22 +1,38 @@
 import React from "react";
-import { View, Text } from "react-native";
-import styles from '../styles';
+import styled from "styled-components/native";
 
 type MainProps = {
     name: string,
     msg: string,
 }
 
+const MainView = styled.View`
+    padding: 20px 30px;
+`
+
+const NameText = styled.Text`
+    color: #000;
+    font-size: 27px;
+    font-family: 'Pretendard-Bold';
+    margin-bottom: 3px;
+`
+
+const MsgText = styled.Text`
+    color: #000;
+    font-size: 20px;
+    font-family: 'Pretendard-SemiBold';
+`
+
 const Main: React.FC<MainProps> = ({ name, msg }) => {
     return (
-        <View style={ styles.topView }>
-            <Text style={ styles.name }>
+        <MainView>
+            <NameText>
                 {name}님
-            </Text>
-            <Text style={ styles.msg }>
+            </NameText>
+            <MsgText>
                 {msg}
-            </Text>
-        </View>
+            </MsgText>
+        </MainView>
     );
 }
 
