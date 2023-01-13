@@ -49,26 +49,6 @@ const BottomSheet: React.FC<childrenProps> = ({children}) => {
                             { cancelable: false }
                         );
                     }
-                } else {
-                    if (gesture.dy >= -DRAG_THRESHOLD) {
-                        Alert.alert(
-                            "메모 작성",
-                            "작성을 그만 하실건가요?",
-                            [
-                                {
-                                    text: "네",
-                                    onPress: () => springAnimation('down') },
-                                {
-                                    text: "아니요",
-                                    onPress: () => springAnimation('up'),
-                                    style: "cancel"
-                                },
-                            ],
-                            { cancelable: false }
-                        );
-                    } else {
-                        springAnimation('up');
-                    }
                 }
             },
         })
